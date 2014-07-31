@@ -1,5 +1,4 @@
 # Given a roman numeral, convert it to an integer.
-
 # Input is guaranteed to be within the range from 1 to 3999.
 
 def romanToInt(s):
@@ -22,6 +21,6 @@ def romanToInt(s):
     
 if __name__ == '__main__':
     s = 'MDCCCLXXXIV'
-    out = romanToInt(s)
+    out = romanToInt('MM')
         
         

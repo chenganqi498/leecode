@@ -1,0 +1,2 @@
+git remote add origin https://github.com/chenganqi498/leecode.git
+git push -u origin master
