@@ -11,12 +11,10 @@ class Solution:
     # per(n) = per(n-1)*n    
     def permute(self, num):
         p0 = [[num[0]]] # permutations at step n-1
-        
-        
         for i in range(1, len(num)):
+            p1 = [] #permutations at step n
             for item in p0:  
                 j = 0    
-                p1 = [] #permutations at step n
                 while j <= len(item):
                     # insert num[i] before item[j]
                     p1.append(item[0:j] + [num[i]] + item[j:])
@@ -24,10 +22,9 @@ class Solution:
                     if j != len(item) and item[j] == num[i]: j += 2
                     else: j += 1                                             
             p0 = p1
-            
-            
         return p0
 
 if __name__ == '__main__':
     test = Solution()
-    out = test.permute([1,1,1])
+    out = test.permute([1,2,3])
+    print out
