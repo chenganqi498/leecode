@@ -12,18 +12,18 @@ class Solution:
     def mergeTwoLists(self, l1, l2):
         new = ListNode(0)
         back = new
-          
+
         while l1 != None or l2 != None:
-          if l1 == None or l1.val > l2.val:
+          if l1 == None: new.next, l2 = l2, l2.next
+          elif l2 == None: new.next, l1 = l1, l1.next
+          elif l1.val > l2.val:
               new.next, l2 =  l2, l2.next
-        
-          elif l2 == None or l1.val < l2.val:
+          else:
               new.next, l1 = l1, l1.next
-          
           new = new.next
         # the first node is set by hand, so drop it
         return back.next
-        
+
 if __name__ == '__main__':
     l1 = ListNode(1)
     l1.next = ListNode(3)

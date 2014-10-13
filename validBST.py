@@ -9,7 +9,6 @@ class Solution:
     # @param root, a tree node
     # @return a boolean
     def isValidBST(self, tree, small, large):
-        
         if tree == None: return True
         
         if tree.val > small and tree.val < large:

@@ -1,0 +1,32 @@
+# Given a string s consists of upper/lower-case alphabets and empty space characters ' ', 
+# return the length of last word in the string.
+
+# If the last word does not exist, return 0.
+# Note: A word is defined as a character sequence consists of non-space characters only.
+
+# For example, 
+# Given s = "Hello World",
+# return 5.
+
+class Solution:
+    # @param s, a string
+    # @return an integer
+    def lengthOfLastWord(self, s):
+        count, end = 0, -1
+        for i in range(len(s)-1, -1, -1):
+            if s[i] != ' ': 
+               end = i
+               break
+        for j in range(end, -1, -1):
+            if s[j] != ' ': count += 1
+            else: break
+        return count
+
+if __name__ == '__main__':
+   s = 'a    '
+   test = Solution()
+   out = test.lengthOfLastWord(s)
+   print out
+
+
+

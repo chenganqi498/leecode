@@ -17,7 +17,6 @@ class Solution:
        for i in range(1, l-1):
           leftMax = max(leftMax, A[i-1])
           area += max(0, min(leftMax, right[-i])-A[i])
-       print right, leftMax
        return area          
 
 if __name__ == '__main__':

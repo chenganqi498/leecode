@@ -12,13 +12,10 @@ class Solution:
     # @param sum, an integer
     # @return a list of lists of integers
     def pathSum(self, root, sumi):
-        if root == None:
-            return []
+        if root == None: return []
         if root.left == None and root.right == None:
-            if sumi == root.val:
-                return [[root.val]]
-            else:
-                return []
+            if sumi == root.val: return [[root.val]]
+            else: return []
                 
         leftsum = self.pathSum(root.left, sumi - root.val)
         for i in range(len(leftsum)):
@@ -29,7 +26,6 @@ class Solution:
             rightsum[i] = [root.val] + rightsum[i]
    
         return leftsum + rightsum
-    
     
 if __name__ == '__main__':
     root = TreeNode(5)
